@@ -12,8 +12,9 @@ async fn main() {
             let expected_msg = b"pong";
             if message == expected_msg {
                 println!("Received 'pong' from server!");
-                println!("Client deregister");
+                
                 remote.deregister().await?;
+                println!("Client deregister");
                 break;
             }            
         }       
