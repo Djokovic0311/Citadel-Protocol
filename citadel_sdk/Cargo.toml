@@ -45,6 +45,7 @@ tracing = { version = "0.1.37", default-features = false, optional = true }
 citadel_logging = { path = "../citadel_logging", version = "0.4.0", optional = true }
 anyhow = { version = "1", default-features = false }
 bytes = "1.4.0"
+stun = { default-features = false, version = "0.4.4" }
 
 [dev-dependencies]
 tokio = { version = "1.24", default-features = false, features = ["rt"] }
@@ -65,3 +66,21 @@ skip_feature_sets = [
 ]
 
 allowlist = ["std", "filesystem", "google-services", "multi-threaded", "sql", "redis", "webrtc"]
+
+
+[[bin]]
+name = "server"
+path = "my_solution_bin/server.rs"
+required-features = ["citadel_logging"]
+
+[[bin]]
+name = "client"
+path = "my_solution_bin/client.rs"
+required-features = ["citadel_logging"]
+
+
+[[bin]]
+name = "main"
+path = "my_solution_bin/main.rs"
+
+
